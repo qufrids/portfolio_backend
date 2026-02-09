@@ -1,0 +1,107 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ==========================================
+// ADMIN USER (You - to login to dashboard)
+// ==========================================
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      String   @default("ADMIN")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  blogPosts BlogPost[]
+
+  @@map("users")
+}
+
+// ==========================================
+// BLOG POSTS (Your articles)
+// ==========================================
+model BlogPost {
+  id              String    @id @default(cuid())
+  title           String
+  slug            String    @unique
+  excerpt         String?
+  content         String
+  coverImage      String?   @map("cover_image")
+  published       Boolean   @default(false)
+  featured        Boolean   @default(false)
+  views           Int       @default(0)
+  metaTitle       String?   @map("meta_title")
+  metaDescription String?   @map("meta_description")
+  tags            String[]  @default([])
+  authorId        String    @map("author_id")
+  author          User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  publishedAt     DateTime? @map("published_at")
+  createdAt       DateTime  @default(now()) @map("created_at")
+  updatedAt       DateTime  @updatedAt @map("updated_at")
+
+  @@index([slug])
+  @@index([published])
+  @@map("blog_posts")
+}
+
+// ==========================================
+// CONTACT MESSAGES (People who message you)
+// ==========================================
+model Message {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String?
+  message   String
+  status    String   @default("UNREAD")
+  replied   Boolean  @default(false)
+  ipAddress String?  @map("ip_address")
+  userAgent String?  @map("user_agent")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([status])
+  @@index([createdAt])
+  @@map("messages")
+}
+
+// ==========================================
+// PAGE VIEWS (Who visited your site)
+// ==========================================
+model PageView {
+  id        String   @id @default(cuid())
+  path      String
+  title     String?
+  referrer  String?
+  visitorId String?  @map("visitor_id")
+  ipAddress String?  @map("ip_address")
+  userAgent String?  @map("user_agent")
+  country   String?
+  device    String?
+  browser   String?
+  duration  Int?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([path])
+  @@index([createdAt])
+  @@map("page_views")
+}
+
+// ==========================================
+// SITE SETTINGS (Your site configuration)
+// ==========================================
+model Settings {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     Json
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("settings")
+}

@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name — AI Engineer & Research Scientist</title>
+    <meta name="description" content="AI Engineer specializing in LLMs, AGI research, and production ML systems. Building the future of intelligence.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        accent: '#06b6d4',
+                        dark: '#0f172a',
+                        darker: '#020617',
+                    },
+                    animation: {
+                        'gradient': 'gradient 8s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(99, 102, 241, 0.3)' },
+                            '100%': { boxShadow: '0 0 40px rgba(99, 102, 241, 0.6)' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .glass {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .grid-pattern {
+            background-image:
+                linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .code-block {
+            background: #1e293b;
+            border-left: 3px solid #6366f1;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        .typing-effect {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #6366f1;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #6366f1 }
+        }
+
+        .tech-badge {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .tech-badge:hover {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+            border-color: rgba(99, 102, 241, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .metric-card:hover {
+            border-color: rgba(99, 102, 241, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
+        }
+    </style>
+</head>
+
+<body class="bg-darker text-gray-100 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center font-mono font-bold text-sm">
+                    AI
+                </div>
+                <span class="font-mono font-semibold text-lg">YourName</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="#research" class="text-gray-300 hover:text-primary transition">Research</a>
+                <a href="#systems" class="text-gray-300 hover:text-primary transition">Systems</a>
+                <a href="#publications" class="text-gray-300 hover:text-primary transition">Publications</a>
+                <a href="#code" class="text-gray-300 hover:text-primary transition">Open Source</a>
+                <a href="#contact" class="px-4 py-2 bg-primary/20 border border-primary/50 rounded-lg hover:bg-primary/30 transition">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Animated Background -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden grid-pattern">
+        <!-- Animated gradient orbs -->
+        <div class="absolute top-20 left-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-20 right-20 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-float" style="animation-delay: 2s"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <div class="mb-6 inline-flex items-center gap-2 px-4 py-2 glass rounded-full text-sm">
+                <span class="relative flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                </span>
+                <span class="text-gray-300">Available for Research Collaboration</span>
+            </div>
+
+            <h1 class="text-6xl md:text-8xl font-bold mb-6 tracking-tight">
+                <span class="gradient-text">AI Engineer</span><br/>
+                <span class="text-white">Building AGI Systems</span>
+            </h1>
+
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Specializing in <span class="text-primary font-semibold">Large Language Models</span>,
+                <span class="text-secondary font-semibold">Neural Architecture Search</span>,
+                and <span class="text-accent font-semibold">Production ML Systems</span> at scale.
+            </p>
+
+            <!-- Tech Stack Showcase -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <span class="tech-badge px-4 py-2 rounded-lg font-mono text-sm">PyTorch</span>
+                <span class="tech-badge px-4 py-2 rounded-lg font-mono text-sm">TensorFlow</span>
+                <span class="tech-badge px-4 py-2 rounded-lg font-mono text-sm">JAX</span>
+                <span class="tech-badge px-4 py-2 rounded-lg font-mono text-sm">Transformers</span>
+                <span class="tech-badge px-4 py-2 rounded-lg font-mono text-sm">CUDA</span>
+                <span class="tech-badge px-4 py-2 rounded-lg font-mono text-sm">Rust</span>
+                <span class="tech-badge px-4 py-2 rounded-lg font-mono text-sm">Kubernetes</span>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#research" class="px-8 py-4 bg-gradient-to-r from-primary to-secondary rounded-lg font-semibold hover:shadow-2xl hover:shadow-primary/50 transition transform hover:scale-105">
+                    View Research
+                </a>
+                <a href="#publications" class="px-8 py-4 glass rounded-lg font-semibold hover:bg-white/10 transition">
+                    Publications
+                </a>
+                <a href="https://github.com" target="_blank" class="px-8 py-4 glass rounded-lg font-semibold hover:bg-white/10 transition flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+
+            <!-- Metrics Row -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-4xl mx-auto">
+                <div class="metric-card rounded-xl p-6">
+                    <div class="text-4xl font-bold text-primary mb-2">50M+</div>
+                    <div class="text-sm text-gray-400 font-medium">Model Parameters</div>
+                </div>
+                <div class="metric-card rounded-xl p-6">
+                    <div class="text-4xl font-bold text-secondary mb-2">15+</div>
+                    <div class="text-sm text-gray-400 font-medium">Research Papers</div>
+                </div>
+                <div class="metric-card rounded-xl p-6">
+                    <div class="text-4xl font-bold text-accent mb-2">100K+</div>
+                    <div class="text-sm text-gray-400 font-medium">GitHub Stars</div>
+                </div>
+                <div class="metric-card rounded-xl p-6">
+                    <div class="text-4xl font-bold gradient-text mb-2">Top 1%</div>
+                    <div class="text-sm text-gray-400 font-medium">Kaggle Ranking</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Terminal/Code Intro -->
+    <section class="py-20 px-6 bg-dark/50">
+        <div class="max-w-4xl mx-auto">
+            <div class="code-block rounded-xl p-8 font-mono text-sm overflow-x-auto">
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <span class="text-gray-500 ml-4">~/research/agi</span>
+                </div>
+                <div class="text-green-400">
+                    <span class="text-gray-500">$</span> python train.py --model=transformer --params=50B
+                </div>
+                <div class="text-gray-400 mt-2">
+                    >> Initializing distributed training across 256 GPUs...<br/>
+                    >> Loading dataset: 2.5TB of high-quality text data<br/>
+                    >> Architecture: 48-layer Transformer with MoE<br/>
+                    >> Training perplexity: 1.24 | Validation loss: 2.31<br/>
+                    <span class="text-green-400">>> Training completed successfully ✓</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Areas -->
+    <section id="research" class="py-32 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 grid-pattern opacity-30"></div>
+
+        <div class="relative max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6">
+                    <span class="gradient-text">Research Focus</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Pushing the boundaries of artificial intelligence through fundamental research and practical applications
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Research Card 1 -->
+                <div class="gradient-border rounded-2xl p-8 hover:scale-105 transition transform">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Large Language Models</h3>
+                    <p class="text-gray-400 mb-6">
+                        Developing novel architectures for efficient training and inference of billion-parameter language models with focus on reasoning capabilities.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-primary/20 border border-primary/40 rounded-full text-xs font-mono">Transformers</span>
+                        <span class="px-3 py-1 bg-primary/20 border border-primary/40 rounded-full text-xs font-mono">RLHF</span>
+                        <span class="px-3 py-1 bg-primary/20 border border-primary/40 rounded-full text-xs font-mono">In-Context Learning</span>
+                    </div>
+                </div>
+
+                <!-- Research Card 2 -->
+                <div class="gradient-border rounded-2xl p-8 hover:scale-105 transition transform">
+                    <div class="w-16 h-16 bg-gradient-to-br from-secondary to-accent rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Neural Architecture Search</h3>
+                    <p class="text-gray-400 mb-6">
+                        Automated discovery of optimal neural network architectures using evolutionary algorithms and reinforcement learning.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-secondary/20 border border-secondary/40 rounded-full text-xs font-mono">AutoML</span>
+                        <span class="px-3 py-1 bg-secondary/20 border border-secondary/40 rounded-full text-xs font-mono">Evolution</span>
+                        <span class="px-3 py-1 bg-secondary/20 border border-secondary/40 rounded-full text-xs font-mono">Efficient NAS</span>
+                    </div>
+                </div>
+
+                <!-- Research Card 3 -->
+                <div class="gradient-border rounded-2xl p-8 hover:scale-105 transition transform">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Multimodal AI</h3>
+                    <p class="text-gray-400 mb-6">
+                        Building systems that understand and generate across vision, language, and audio modalities with unified representations.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-accent/20 border border-accent/40 rounded-full text-xs font-mono">CLIP</span>
+                        <span class="px-3 py-1 bg-accent/20 border border-accent/40 rounded-full text-xs font-mono">Diffusion</span>
+                        <span class="px-3 py-1 bg-accent/20 border border-accent/40 rounded-full text-xs font-mono">VLMs</span>
+                    </div>
+                </div>
+
+                <!-- Research Card 4 -->
+                <div class="gradient-border rounded-2xl p-8 hover:scale-105 transition transform">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Efficient Training</h3>
+                    <p class="text-gray-400 mb-6">
+                        Optimizing training workflows through mixed-precision, gradient checkpointing, and distributed strategies for massive models.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-primary/20 border border-primary/40 rounded-full text-xs font-mono">DeepSpeed</span>
+                        <span class="px-3 py-1 bg-primary/20 border border-primary/40 rounded-full text-xs font-mono">FSDP</span>
+                        <span class="px-3 py-1 bg-primary/20 border border-primary/40 rounded-full text-xs font-mono">Flash Attention</span>
+                    </div>
+                </div>
+
+                <!-- Research Card 5 -->
+                <div class="gradient-border rounded-2xl p-8 hover:scale-105 transition transform">
+                    <div class="w-16 h-16 bg-gradient-to-br from-secondary to-primary rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Reinforcement Learning</h3>
+                    <p class="text-gray-400 mb-6">
+                        Developing RL agents that learn complex behaviors through interaction, with applications in robotics and strategic decision-making.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-secondary/20 border border-secondary/40 rounded-full text-xs font-mono">PPO</span>
+                        <span class="px-3 py-1 bg-secondary/20 border border-secondary/40 rounded-full text-xs font-mono">DQN</span>
+                        <span class="px-3 py-1 bg-secondary/20 border border-secondary/40 rounded-full text-xs font-mono">Multi-Agent</span>
+                    </div>
+                </div>
+
+                <!-- Research Card 6 -->
+                <div class="gradient-border rounded-2xl p-8 hover:scale-105 transition transform">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-secondary rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">AI Safety & Alignment</h3>
+                    <p class="text-gray-400 mb-6">
+                        Ensuring AI systems remain aligned with human values through interpretability, robustness testing, and constitutional AI methods.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-accent/20 border border-accent/40 rounded-full text-xs font-mono">Interpretability</span>
+                        <span class="px-3 py-1 bg-accent/20 border border-accent/40 rounded-full text-xs font-mono">Red Teaming</span>
+                        <span class="px-3 py-1 bg-accent/20 border border-accent/40 rounded-full text-xs font-mono">Constitutional AI</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Production Systems -->
+    <section id="systems" class="py-32 px-6 bg-dark/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6">
+                    Production <span class="gradient-text">ML Systems</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Deploying AI at scale with robust infrastructure and real-world impact
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <!-- System 1 -->
+                <div class="glass rounded-2xl p-8 hover:bg-white/5 transition">
+                    <div class="flex items-start justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Distributed Training Platform</h3>
+                            <div class="flex items-center gap-2 text-sm text-green-400">
+                                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                <span>Production</span>
+                            </div>
+                        </div>
+                        <div class="px-3 py-1 bg-primary/20 border border-primary/40 rounded-lg text-xs font-mono">
+                            2024
+                        </div>
+                    </div>
+
+                    <p class="text-gray-400 mb-6">
+                        Built a fault-tolerant distributed training system capable of training 100B+ parameter models across 1000+ GPUs with automatic checkpoint recovery and gradient synchronization.
+                    </p>
+
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-400">Scale</span>
+                            <span class="font-mono text-primary">1000+ GPUs</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-400">Throughput</span>
+                            <span class="font-mono text-primary">2.5M tokens/sec</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-400">Efficiency</span>
+                            <span class="font-mono text-primary">92% GPU utilization</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono">PyTorch FSDP</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono">Ray</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono">Kubernetes</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono">Triton</span>
+                    </div>
+                </div>
+
+                <!-- System 2 -->
+                <div class="glass rounded-2xl p-8 hover:bg-white/5 transition">
+                    <div class="flex items-start justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Real-Time Inference Engine</h3>
+                            <div class="flex items-center gap-2 text-sm text-green-400">
+                                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                <span>Production</span>
+                            </div>
+                        </div>
+                        <div class="px-3 py-1 bg-primary/20 border border-primary/40 rounded-lg text-xs font-mono">
+                            2024
+                        </div>
+                    </div>
+
+                    <p class="text-gray-400 mb-6">
+                        Optimized inference pipeline serving 10B parameter models with sub-50ms latency using quantization, KV-cache optimization, and speculative decoding techniques.
+                    </p>
+
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-400">Latency</span>
+                            <span class="font-mono text-primary">p99: 48ms</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-400">Requests/sec</span>
+                            <span class="font-mono text-primary">50,000+</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-400">Cost Reduction</span>
+                            <span class="font-mono text-primary">-73%</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono">vLLM</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono">TensorRT-LLM</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono">INT8 Quantization</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono">CUDA</span>
+                    </div>
+                </div>
+
+                <!-- System 3 -->
+                <div class="glass rounded-2xl p-8 hover:bg-white/5 transition">
+                    <div class="flex items-start justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Data Pipeline & Curation</h3>
+                            <div class="flex items-center gap-2 text-sm text-green-400">
+                                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                <span>Production</span>
+                            </div>
+                        </div>
+                        <div class="px-3 py-1 bg-primary/20 border border-primary/40 rounded-lg text-xs font-mono">
+                            2023
+                        </div>
+                    </div>
+
+                    <p class="text-gray-400 mb-6">
+                        Engineered petabyte-scale data processing pipeline with deduplication, quality filtering, and PII removal, processing 50TB/day with automated quality scoring.
+                    </p>
+
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-400">Data Volume</span>
+                            <span class="font-mono text-primary">5.2 Petabytes</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-400">Processing Speed</span>
+                            <span class="font-mono text-primary">50TB/day</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-400">Quality Score</span>
+                            <span class="font-mono text-primary">96.3%</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono">Apache Spark</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono">Dask</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono">MinHash LSH</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono">Rust</span>
+                    </div>
+                </div>
+
+                <!-- System 4 -->
+                <div class="glass rounded-2xl p-8 hover:bg-white/5 transition">
+                    <div class="flex items-start justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">MLOps Platform</h3>
+                            <div class="flex items-center gap-2 text-sm text-green-400">
+                                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                <span>Production</span>
+                            </div>
+                        </div>
+                        <div class="px-3 py-1 bg-primary/20 border border-primary/40 rounded-lg text-xs font-mono">
+                            2023
+                        </div>
+                    </div>
+
+                    <p class="text-gray-400 mb-6">
+                        End-to-end ML platform with experiment tracking, model versioning, A/B testing framework, and automated deployment pipelines for 50+ production models.
+                    </p>
+
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-400">Models Deployed</span>
+                            <span class="font-mono text-primary">50+</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-400">Deploy Time</span>
+                            <span class="font-mono text-primary">< 5 minutes</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-400">Uptime</span>
+                            <span class="font-mono text-primary">99.98%</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono">MLflow</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono">Kubeflow</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono">Prometheus</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono">Grafana</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6">
+                    <span class="gradient-text">Publications</span> & Research
+                </h2>
+                <p class="text-xl text-gray-400">
+                    Peer-reviewed papers and preprints advancing the field
+                </p>
+            </div>
+
+            <div class="space-y-6">
+
+                <!-- Paper 1 -->
+                <div class="glass rounded-xl p-8 hover:bg-white/5 transition group">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition">
+                                Efficient Attention Mechanisms for Billion-Parameter Language Models
+                            </h3>
+                            <p class="text-gray-400 text-sm mb-3">
+                                <span class="font-semibold text-gray-300">Your Name</span>, Co-Author 1, Co-Author 2
+                            </p>
+                        </div>
+                        <div class="flex gap-3">
+                            <span class="px-3 py-1 bg-primary/20 border border-primary/40 rounded-lg text-xs font-mono whitespace-nowrap">
+                                NeurIPS 2024
+                            </span>
+                            <span class="px-3 py-1 bg-accent/20 border border-accent/40 rounded-lg text-xs font-mono whitespace-nowrap">
+                                Oral
+                            </span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        We propose a novel sparse attention mechanism that reduces computational complexity from O(n²) to O(n log n) while maintaining model quality, enabling training of models with 100B+ parameters on commodity hardware.
+                    </p>
+                    <div class="flex flex-wrap gap-3 text-sm">
+                        <a href="#" class="text-primary hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            Paper
+                        </a>
+                        <a href="#" class="text-secondary hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            Code
+                        </a>
+                        <span class="text-gray-500">•</span>
+                        <span class="text-gray-400">Citations: <span class="font-mono text-primary">347</span></span>
+                    </div>
+                </div>
+
+                <!-- Paper 2 -->
+                <div class="glass rounded-xl p-8 hover:bg-white/5 transition group">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition">
+                                Scalable Reinforcement Learning from Human Feedback for Language Models
+                            </h3>
+                            <p class="text-gray-400 text-sm mb-3">
+                                Co-Author 1, <span class="font-semibold text-gray-300">Your Name</span>, Co-Author 3, Co-Author 4
+                            </p>
+                        </div>
+                        <div class="flex gap-3">
+                            <span class="px-3 py-1 bg-primary/20 border border-primary/40 rounded-lg text-xs font-mono whitespace-nowrap">
+                                ICML 2024
+                            </span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Developed a distributed RLHF framework capable of fine-tuning 50B+ parameter models with human preferences, achieving 30% improvement in helpfulness while maintaining safety constraints.
+                    </p>
+                    <div class="flex flex-wrap gap-3 text-sm">
+                        <a href="#" class="text-primary hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            Paper
+                        </a>
+                        <a href="#" class="text-secondary hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            Code
+                        </a>
+                        <span class="text-gray-500">•</span>
+                        <span class="text-gray-400">Citations: <span class="font-mono text-primary">521</span></span>
+                    </div>
+                </div>
+
+                <!-- Paper 3 -->
+                <div class="glass rounded-xl p-8 hover:bg-white/5 transition group">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition">
+                                Neural Architecture Search for Vision Transformers with Hardware Constraints
+                            </h3>
+                            <p class="text-gray-400 text-sm mb-3">
+                                <span class="font-semibold text-gray-300">Your Name</span>, Co-Author 1
+                            </p>
+                        </div>
+                        <div class="flex gap-3">
+                            <span class="px-3 py-1 bg-primary/20 border border-primary/40 rounded-lg text-xs font-mono whitespace-nowrap">
+                                CVPR 2023
+                            </span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Introduced a hardware-aware NAS method that discovers efficient ViT architectures 3x faster than manual design while achieving state-of-the-art accuracy on ImageNet with 40% fewer FLOPs.
+                    </p>
+                    <div class="flex flex-wrap gap-3 text-sm">
+                        <a href="#" class="text-primary hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            Paper
+                        </a>
+                        <a href="#" class="text-secondary hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            Code
+                        </a>
+                        <span class="text-gray-500">•</span>
+                        <span class="text-gray-400">Citations: <span class="font-mono text-primary">289</span></span>
+                    </div>
+                </div>
+
+                <!-- View All -->
+                <div class="text-center pt-8">
+                    <a href="#" class="inline-flex items-center gap-2 px-6 py-3 glass rounded-lg hover:bg-white/10 transition">
+                        <span>View all 15 publications</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Source Projects -->
+    <section id="code" class="py-32 px-6 bg-dark/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6">
+                    Open Source <span class="gradient-text">Contributions</span>
+                </h2>
+                <p class="text-xl text-gray-400">
+                    Building tools that advance the ML community
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <!-- Project 1 -->
+                <div class="gradient-border rounded-2xl p-8 hover:scale-105 transition transform">
+                    <div class="flex items-start justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">llm-optimize</h3>
+                            <p class="text-sm text-gray-400">Inference optimization toolkit</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-yellow-400">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
+                            </svg>
+                            <span class="font-mono">42.3k</span>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-400 mb-6">
+                        Production-ready library for optimizing LLM inference with quantization, KV-cache management, and batching strategies. Reduces latency by 70% and costs by 65%.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-primary/20 border border-primary/40 rounded-full text-xs font-mono">Python</span>
+                        <span class="px-3 py-1 bg-secondary/20 border border-secondary/40 rounded-full text-xs font-mono">C++</span>
+                        <span class="px-3 py-1 bg-accent/20 border border-accent/40 rounded-full text-xs font-mono">CUDA</span>
+                    </div>
+
+                    <div class="flex gap-4 text-sm">
+                        <a href="#" class="text-primary hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            Repository
+                        </a>
+                        <a href="#" class="text-secondary hover:underline">Documentation</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="gradient-border rounded-2xl p-8 hover:scale-105 transition transform">
+                    <div class="flex items-start justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">neural-nas</h3>
+                            <p class="text-sm text-gray-400">Automated architecture search</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-yellow-400">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
+                            </svg>
+                            <span class="font-mono">28.7k</span>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-400 mb-6">
+                        Framework for discovering optimal neural architectures using evolutionary algorithms and gradient-based methods. 10x faster than baseline NAS approaches.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-primary/20 border border-primary/40 rounded-full text-xs font-mono">Python</span>
+                        <span class="px-3 py-1 bg-secondary/20 border border-secondary/40 rounded-full text-xs font-mono">PyTorch</span>
+                        <span class="px-3 py-1 bg-accent/20 border border-accent/40 rounded-full text-xs font-mono">JAX</span>
+                    </div>
+
+                    <div class="flex gap-4 text-sm">
+                        <a href="#" class="text-primary hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            Repository
+                        </a>
+                        <a href="#" class="text-secondary hover:underline">Documentation</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="gradient-border rounded-2xl p-8 hover:scale-105 transition transform">
+                    <div class="flex items-start justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">data-curator</h3>
+                            <p class="text-sm text-gray-400">ML dataset processing pipeline</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-yellow-400">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
+                            </svg>
+                            <span class="font-mono">19.2k</span>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-400 mb-6">
+                        High-performance data curation toolkit with deduplication, quality filtering, and PII detection. Processes 100TB+ datasets efficiently.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-primary/20 border border-primary/40 rounded-full text-xs font-mono">Rust</span>
+                        <span class="px-3 py-1 bg-secondary/20 border border-secondary/40 rounded-full text-xs font-mono">Python</span>
+                        <span class="px-3 py-1 bg-accent/20 border border-accent/40 rounded-full text-xs font-mono">Arrow</span>
+                    </div>
+
+                    <div class="flex gap-4 text-sm">
+                        <a href="#" class="text-primary hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            Repository
+                        </a>
+                        <a href="#" class="text-secondary hover:underline">Documentation</a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="gradient-border rounded-2xl p-8 hover:scale-105 transition transform">
+                    <div class="flex items-start justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">interpretable-ai</h3>
+                            <p class="text-sm text-gray-400">Model interpretability suite</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-yellow-400">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
+                            </svg>
+                            <span class="font-mono">15.6k</span>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-400 mb-6">
+                        Tools for understanding neural network decisions through activation analysis, attention visualization, and feature attribution methods.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-primary/20 border border-primary/40 rounded-full text-xs font-mono">Python</span>
+                        <span class="px-3 py-1 bg-secondary/20 border border-secondary/40 rounded-full text-xs font-mono">PyTorch</span>
+                        <span class="px-3 py-1 bg-accent/20 border border-accent/40 rounded-full text-xs font-mono">React</span>
+                    </div>
+
+                    <div class="flex gap-4 text-sm">
+                        <a href="#" class="text-primary hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            Repository
+                        </a>
+                        <a href="#" class="text-secondary hover:underline">Documentation</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 grid-pattern opacity-20"></div>
+
+        <div class="relative max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl md:text-6xl font-bold mb-6">
+                Let's <span class="gradient-text">Collaborate</span>
+            </h2>
+            <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+                Open to research collaborations, technical consulting, and conversations about the future of AI
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <a href="mailto:your@email.com" class="glass rounded-xl p-8 hover:bg-white/5 transition group">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="font-semibold mb-1">Email</div>
+                    <div class="text-sm text-gray-400 font-mono">your@email.com</div>
+                </a>
+
+                <a href="https://twitter.com" target="_blank" class="glass rounded-xl p-8 hover:bg-white/5 transition group">
+                    <div class="w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                        </svg>
+                    </div>
+                    <div class="font-semibold mb-1">Twitter</div>
+                    <div class="text-sm text-gray-400 font-mono">@yourhandle</div>
+                </a>
+
+                <a href="https://github.com" target="_blank" class="glass rounded-xl p-8 hover:bg-white/5 transition group">
+                    <div class="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </div>
+                    <div class="font-semibold mb-1">GitHub</div>
+                    <div class="text-sm text-gray-400 font-mono">@yourusername</div>
+                </a>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://scholar.google.com" target="_blank" class="px-6 py-3 glass rounded-lg hover:bg-white/10 transition">
+                    Google Scholar
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="px-6 py-3 glass rounded-lg hover:bg-white/10 transition">
+                    LinkedIn
+                </a>
+                <a href="#" class="px-6 py-3 glass rounded-lg hover:bg-white/10 transition">
+                    Download CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-white/10">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-gray-500 text-sm mb-4">
+                © 2024 Your Name. Building the future of artificial intelligence.
+            </p>
+            <div class="flex justify-center gap-6 text-xs text-gray-600">
+                <a href="#" class="hover:text-gray-400">Privacy</a>
+                <a href="#" class="hover:text-gray-400">Terms</a>
+                <a href="#" class="hover:text-gray-400">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Smooth Scroll -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
