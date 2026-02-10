@@ -128,23 +128,42 @@
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 glass border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center font-mono font-bold text-sm">
-                    AI
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
+            <a href="#hero" class="flex items-center gap-2.5 group">
+                <div class="w-9 h-9 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center font-mono font-bold text-sm shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-shadow">
+                    UZ
                 </div>
-                <span class="font-mono font-semibold text-lg">YourName</span>
-            </div>
-            <div class="hidden md:flex gap-8 text-sm font-medium">
-                <a href="#research" class="text-gray-300 hover:text-primary transition">Research</a>
-                <a href="#systems" class="text-gray-300 hover:text-primary transition">Systems</a>
-                <a href="#publications" class="text-gray-300 hover:text-primary transition">Publications</a>
-                <a href="#code" class="text-gray-300 hover:text-primary transition">Open Source</a>
-                <a href="#blog" class="text-gray-300 hover:text-primary transition">Blog</a>
-                <a href="#contact" class="px-4 py-2 bg-primary/20 border border-primary/50 rounded-lg hover:bg-primary/30 transition">
+                <span class="font-semibold text-lg text-white tracking-tight">Umar<span class="text-primary">Zeb</span></span>
+            </a>
+
+            <!-- Desktop nav -->
+            <div class="hidden lg:flex items-center gap-1">
+                <a href="#research" class="nav-link px-3 py-2 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-all">Research</a>
+                <a href="#systems" class="nav-link px-3 py-2 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-all">Systems</a>
+                <a href="#publications" class="nav-link px-3 py-2 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-all">Publications</a>
+                <a href="#code" class="nav-link px-3 py-2 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-all">Open Source</a>
+                <a href="#blog" class="nav-link px-3 py-2 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-all">Blog</a>
+                <a href="#contact" class="ml-2 px-5 py-2 bg-gradient-to-r from-primary to-secondary text-white text-sm font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/30 transition-all hover:-translate-y-0.5">
                     Contact
                 </a>
             </div>
+
+            <!-- Mobile hamburger -->
+            <button id="mobile-menu-btn" class="lg:hidden text-gray-300 hover:text-white p-2 -mr-2 transition" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 px-4 pb-4 pt-2 space-y-1">
+            <a href="#research" class="block px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Research</a>
+            <a href="#systems" class="block px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Systems</a>
+            <a href="#publications" class="block px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Publications</a>
+            <a href="#code" class="block px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Open Source</a>
+            <a href="#blog" class="block px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Blog</a>
+            <a href="#contact" class="block px-4 py-3 mt-2 bg-gradient-to-r from-primary to-secondary text-white text-center font-semibold rounded-lg" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contact</a>
         </div>
     </nav>
 
