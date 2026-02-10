@@ -47,7 +47,7 @@ export default function SettingsPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-white mb-2">Settings</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">Settings</h1>
       <p className="text-gray-400 mb-8">Manage your site configuration</p>
 
       {message && (
@@ -57,7 +57,7 @@ export default function SettingsPage() {
       )}
 
       {/* Site Settings */}
-      <div className="glass rounded-xl p-6 mb-6">
+      <div className="glass rounded-xl p-4 sm:p-6 mb-6">
         <h2 className="text-xl font-bold text-white mb-6">Site Information</h2>
         <div className="space-y-4">
           <div>
@@ -98,7 +98,7 @@ export default function SettingsPage() {
       </div>
 
       {/* Social Links */}
-      <div className="glass rounded-xl p-6">
+      <div className="glass rounded-xl p-4 sm:p-6">
         <h2 className="text-xl font-bold text-white mb-6">Social Links</h2>
         <div className="space-y-4">
           <div>

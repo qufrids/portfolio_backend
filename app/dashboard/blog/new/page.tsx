@@ -42,9 +42,9 @@ export default function NewBlogPost() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-white mb-8">New Blog Post</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold text-white mb-8">New Blog Post</h1>
 
-      <form onSubmit={handleSubmit} className="glass rounded-xl p-8 space-y-6 max-w-3xl">
+      <form onSubmit={handleSubmit} className="glass rounded-xl p-4 sm:p-8 space-y-6 max-w-3xl">
         <div>
           <label className="block text-gray-300 mb-2 text-sm font-medium">Title</label>
           <input
@@ -103,7 +103,7 @@ export default function NewBlogPost() {
           <label htmlFor="published" className="text-gray-300 text-sm">Publish immediately</label>
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
           <button
             type="submit"
             disabled={loading}

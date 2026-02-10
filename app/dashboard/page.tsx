@@ -42,11 +42,11 @@ export default function DashboardPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-white mb-2">Dashboard</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">Dashboard</h1>
       <p className="text-gray-400 mb-8">Welcome back, Umar!</p>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mb-8">
         <StatCard label="Total Views" value={stats.views} icon="👁️" color="indigo" />
         <StatCard label="Messages" value={stats.messages} icon="💬" color="purple" />
         <StatCard label="Unread" value={stats.unread} icon="📩" color="yellow" />
@@ -65,12 +65,12 @@ export default function DashboardPage() {
         ) : (
           <div className="space-y-3">
             {recentMessages.map((msg: any) => (
-              <div key={msg.id} className="p-4 bg-slate-800/50 rounded-lg border border-white/5">
-                <div className="flex justify-between items-start mb-1">
+              <div key={msg.id} className="p-3 sm:p-4 bg-slate-800/50 rounded-lg border border-white/5">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 mb-1">
                   <h3 className="font-semibold text-white">{msg.name}</h3>
                   <span className="text-xs text-gray-500">{new Date(msg.createdAt).toLocaleDateString()}</span>
                 </div>
-                <p className="text-sm text-gray-400">{msg.email}</p>
+                <p className="text-sm text-gray-400 break-all">{msg.email}</p>
                 <p className="text-sm text-gray-300 mt-2 line-clamp-2">{msg.message}</p>
               </div>
             ))}
@@ -90,10 +90,10 @@ function StatCard({ label, value, icon, color }: { label: string; value: number;
   };
 
   return (
-    <div className={`p-6 rounded-xl border bg-gradient-to-br ${colorClasses[color]}`}>
-      <div className="text-2xl mb-3">{icon}</div>
-      <p className="text-gray-400 text-sm">{label}</p>
-      <p className="text-3xl font-bold text-white mt-1">{value.toLocaleString()}</p>
+    <div className={`p-4 sm:p-6 rounded-xl border bg-gradient-to-br ${colorClasses[color]}`}>
+      <div className="text-2xl mb-2 sm:mb-3">{icon}</div>
+      <p className="text-gray-400 text-xs sm:text-sm">{label}</p>
+      <p className="text-2xl sm:text-3xl font-bold text-white mt-1">{value.toLocaleString()}</p>
     </div>
   );
 }

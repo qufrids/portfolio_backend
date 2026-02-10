@@ -25,14 +25,14 @@ export default function BlogPage() {
 
   return (
     <div>
-      <div className="flex justify-between items-center mb-8">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-white mb-2">Blog Posts</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">Blog Posts</h1>
           <p className="text-gray-400">Manage your articles</p>
         </div>
         <Link
           href="/dashboard/blog/new"
-          className="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity"
+          className="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity text-center"
         >
           + New Post
         </Link>
@@ -52,11 +52,11 @@ export default function BlogPage() {
       ) : (
         <div className="space-y-4">
           {posts.map((post: any) => (
-            <div key={post.id} className="glass rounded-xl p-6 flex justify-between items-center">
+            <div key={post.id} className="glass rounded-xl p-4 sm:p-6">
               <div>
                 <h3 className="text-lg font-semibold text-white">{post.title}</h3>
-                <p className="text-sm text-gray-400 mt-1">{post.excerpt || 'No excerpt'}</p>
-                <div className="flex gap-3 mt-2">
+                <p className="text-sm text-gray-400 mt-1 line-clamp-2">{post.excerpt || 'No excerpt'}</p>
+                <div className="flex flex-wrap gap-3 mt-2">
                   <span className={`px-2 py-1 text-xs rounded-full ${post.published ? 'bg-green-500/20 text-green-400' : 'bg-yellow-500/20 text-yellow-400'}`}>
                     {post.published ? 'Published' : 'Draft'}
                   </span>

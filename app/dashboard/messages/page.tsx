@@ -24,7 +24,7 @@ export default function MessagesPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-white mb-2">Messages</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">Messages</h1>
       <p className="text-gray-400 mb-8">Contact form submissions</p>
 
       {messages.length === 0 ? (
@@ -35,17 +35,17 @@ export default function MessagesPage() {
       ) : (
         <div className="space-y-4">
           {messages.map((msg: any) => (
-            <div key={msg.id} className="glass rounded-xl p-6">
-              <div className="flex justify-between items-start mb-3">
-                <div>
+            <div key={msg.id} className="glass rounded-xl p-4 sm:p-6">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3">
+                <div className="min-w-0">
                   <h3 className="text-lg font-semibold text-white">{msg.name}</h3>
-                  <p className="text-sm text-gray-400">{msg.email}</p>
+                  <p className="text-sm text-gray-400 break-all">{msg.email}</p>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 flex-shrink-0">
                   {msg.status === 'UNREAD' && (
                     <span className="px-2 py-1 text-xs bg-indigo-500/20 text-indigo-400 rounded-full">New</span>
                   )}
-                  <span className="text-xs text-gray-500">{new Date(msg.createdAt).toLocaleString()}</span>
+                  <span className="text-xs text-gray-500 whitespace-nowrap">{new Date(msg.createdAt).toLocaleString()}</span>
                 </div>
               </div>
               {msg.subject && <p className="text-sm text-indigo-400 mb-2">Subject: {msg.subject}</p>}
