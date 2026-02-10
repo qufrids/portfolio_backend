@@ -121,6 +121,37 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
         }
+
+        /* Logo */
+        .logo-mark {
+            position: relative;
+            width: 38px;
+            height: 38px;
+        }
+        .logo-mark svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.4));
+            transition: filter 0.3s ease;
+        }
+        .logo-mark:hover svg {
+            filter: drop-shadow(0 0 14px rgba(99, 102, 241, 0.7));
+        }
+        .logo-mark .logo-ring {
+            stroke-dasharray: 160;
+            stroke-dashoffset: 160;
+            animation: logo-draw 1.2s ease-out forwards;
+        }
+        .logo-mark .logo-letter {
+            opacity: 0;
+            animation: logo-fade 0.5s ease-out 0.8s forwards;
+        }
+        @keyframes logo-draw {
+            to { stroke-dashoffset: 0; }
+        }
+        @keyframes logo-fade {
+            to { opacity: 1; }
+        }
     </style>
 </head>
 
@@ -130,10 +161,22 @@
     <nav class="fixed top-0 w-full z-50 glass border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
             <a href="#hero" class="flex items-center gap-2.5 group">
-                <div class="w-9 h-9 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center font-mono font-bold text-sm shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-shadow">
-                    UZ
+                <div class="logo-mark">
+                    <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#6366f1"/>
+                                <stop offset="100%" stop-color="#a855f7"/>
+                            </linearGradient>
+                        </defs>
+                        <rect class="logo-ring" x="1.5" y="1.5" width="35" height="35" rx="10" stroke="url(#logoGrad)" stroke-width="2" fill="rgba(99,102,241,0.08)"/>
+                        <text class="logo-letter" x="19" y="24" text-anchor="middle" fill="url(#logoGrad)" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="15">UZ</text>
+                    </svg>
                 </div>
-                <span class="font-semibold text-lg text-white tracking-tight">Umar<span class="text-primary">Zeb</span></span>
+                <div class="flex flex-col leading-none">
+                    <span class="font-bold text-base text-white tracking-tight group-hover:text-primary transition-colors">Umar Zeb</span>
+                    <span class="text-[10px] font-mono text-gray-500 tracking-widest uppercase mt-0.5">AI Engineer</span>
+                </div>
             </a>
 
             <!-- Desktop nav -->
